@@ -20,6 +20,6 @@ class NPArea extends Model
 
     public function translates(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany(NPAreaTranslate::class);
+        return $this->hasMany(NPAreaTranslate::class, 'np_area_id', 'id');
     }
 }

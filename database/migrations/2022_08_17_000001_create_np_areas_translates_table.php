@@ -14,11 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('np_area_translates', function (Blueprint $table) {
-            $table->bigInteger('np_region_id')->unsigned();
+            $table->bigInteger('np_area_id')->unsigned();
             $table->string('lang');
             $table->string('name');
 
-            $table->foreign('np_region_id')
+            $table->foreign('np_area_id')
                 ->references('id')->on('np_areas')->onDelete('cascade');
         });
     }
