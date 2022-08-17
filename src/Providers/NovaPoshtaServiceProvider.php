@@ -2,6 +2,7 @@
 
 namespace Golliaphuth\NovaPoshta\Providers;
 
+use Golliaphuth\NovaPoshta\Console\Commands\NPAreasImportCommand;
 use Illuminate\Support\ServiceProvider;
 
 class NovaPoshtaServiceProvider extends ServiceProvider
@@ -13,8 +14,9 @@ class NovaPoshtaServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__ . '/../../config/nova_poshta.php' => config_path('nova_poshta.php'),
             ]);
+            $this->commands([
+                NPAreasImportCommand::class,
+            ]);
         }
-
-        $this->loadRoutesFrom(__DIR__ . '/../../routes/api.php');
     }
 }
