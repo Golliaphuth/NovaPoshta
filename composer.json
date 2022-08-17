@@ -1,0 +1,30 @@
+{
+    "name": "golliaphuth/novaposhta",
+    "description": "API Nova Poshta",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Golliaphuth",
+            "email": "golliaphuth@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Golliaphuth\\NovaPoshta\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Golliaphuth\\NovaPoshta\\Providers\\NovaPoshtaServiceProvider"
+            ]
+        }
+    }
+}
