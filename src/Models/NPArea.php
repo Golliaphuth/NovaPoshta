@@ -9,6 +9,8 @@ class NPArea extends Model
 {
     use SoftDeletes;
 
+    protected $table = 'np_areas';
+
     public $timestamps = false;
 
     protected $fillable = [
