@@ -28,13 +28,11 @@ class NPAreasImportCommand extends Command
         if ($response->successful()) {
             $data = $response->json()['data'];
             foreach($data as $r) {
-                $area = NPArea::create([
+                $area = NPArea::firstOrCreate([
                     'ref' => $r['Ref']
-                ]);
-                $area->translates()->createMany([
-                    ['lang' => 'uk', 'name' => $r['Description']],
-                    ['lang' => 'ru', 'name' => $r['DescriptionRu']],
-                ]);
+                ], []);
+                $area->translates()->updateOrCreate([ 'lang' => 'uk' ],[ 'name' => $r['Description'] ]);
+                $area->translates()->updateOrCreate([ 'lang' => 'ru' ],[ 'name' => $r['DescriptionRu'] ]);
             }
         }
         return 0;

@@ -7,3 +7,11 @@ composer require golliaphuth/novaposhta
 ```php
 php artisan vendor:publish --provider="Golliaphuth\NovaPoshta\Providers\NovaPoshtaServiceProvider\"
 ```
+
+```php
+php artisan migrate
+```
+
+```php
+php artisan np:areas
+```

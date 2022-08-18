@@ -14,8 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('np_areas', function (Blueprint $table) {
-            $table->id();
-            $table->string('ref');
+            $table->string('ref')->unique();
             $table->tinyInteger('disabled')->default(0);
             $table->timestamps();
             $table->softDeletes();

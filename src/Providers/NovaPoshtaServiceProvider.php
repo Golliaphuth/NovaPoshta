@@ -3,6 +3,7 @@
 namespace Golliaphuth\NovaPoshta\Providers;
 
 use Golliaphuth\NovaPoshta\Console\Commands\NPAreasImportCommand;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\ServiceProvider;
 
 class NovaPoshtaServiceProvider extends ServiceProvider

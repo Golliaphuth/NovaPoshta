@@ -2,31 +2,18 @@
 
 namespace Golliaphuth\NovaPoshta;
 
-use Illuminate\Support\Facades\Http;
+use Golliaphuth\NovaPoshta\Entities\Area\Area;
+use Golliaphuth\NovaPoshta\Entities\Area\Settlement;
 
 class NovaPoshta
 {
-    public static function areas(): void
+    public function area(): Area
     {
-        $response = Http::acceptJson()
-            ->post('https://api.novaposhta.ua/v2.0/json/', [
-                "apiKey" => config('nova_poshta.apiKey'),
-                "modelName" => "Address",
-                "calledMethod" => "getAreas"
-            ]);
+        return new Area();
+    }
 
-        if($response->failed()) {
-            dd($response->failed());
-        }
-
-        if ($response->successful()) {
-            $except = config('nova_poshta.regionsExcept');
-            $regions = collect($response->json()['data'])
-                ->filter(function($region) use ($except){
-                    return !in_array($region['Ref'], $except);
-                });
-
-            dd($regions);
-        }
+    public function settlement(): Settlement
+    {
+        return new Settlement();
     }
 }
