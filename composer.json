@@ -1,0 +1,22 @@
+{
+	"name":        "golliaphuth/nova-poshta",
+	"description": "Nova Poshta Client",
+	"license":     "proprietary",
+	"authors":     [
+		{
+			"name":  "Anton Chaliy",
+			"email": "golliaphuth@gmail.com"
+		}
+	],
+	"version":     "0.0.1",
+	"require":     {
+		"php":      ">=8.1",
+		"ext-soap": "*",
+		"ext-curl": "*"
+	},
+	"autoload":    {
+		"psr-4": {
+			"NovaPoshta\\": "src/"
+		}
+	}
+}
