@@ -3,6 +3,7 @@
 namespace NovaPoshta\Requests;
 
 use NovaPoshta\Response\AResponse;
+use RuntimeException;
 use Throwable;
 
 /**
@@ -14,6 +15,9 @@ use Throwable;
  */
 abstract class ARequest implements IRequest
 {
+	/** @var int */
+	private int $tries = 3;
+
 	/** @var string */
 	private string $apiKey;
 
@@ -48,12 +52,16 @@ abstract class ARequest implements IRequest
 			$json = curl_exec($curl);
 			curl_close($curl);
 			$response = json_decode($json, TRUE, 512, JSON_THROW_ON_ERROR);
-//			dd($response);
+//			print_r($response); die();
 			if ($response['success'] === TRUE) {
 				return new $this->responseClass($response['data']);
 			}
 		} catch (Throwable $e) {
-			echo get_class($e) . PHP_EOL . $e->getMessage() . PHP_EOL;
+			if(--$this->tries >= 0) {
+				sleep(3);
+				return $this->send();
+			}
+			throw new RuntimeException($e->getMessage());
 		}
 	}
 }
