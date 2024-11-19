@@ -8,7 +8,7 @@
 			"email": "golliaphuth@gmail.com"
 		}
 	],
-	"version":     "0.0.2",
+	"version":     "0.0.4",
 	"require":     {
 		"php":      ">=8.1",
 		"ext-soap": "*",
