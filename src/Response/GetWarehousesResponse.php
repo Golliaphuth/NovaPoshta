@@ -22,7 +22,7 @@ class GetWarehousesResponse extends AResponse
 	}
 
 	/** @return array */
-	public function settlements(): array
+	public function warehouses(): array
 	{
 		return $this->settlements;
 	}

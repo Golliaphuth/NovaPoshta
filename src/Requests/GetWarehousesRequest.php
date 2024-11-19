@@ -26,7 +26,7 @@ class GetWarehousesRequest extends ARequest
 	/** @var array */
 	protected array $query = [
 		"modelName"        => "AddressGeneral",
-		"calledMethod"     => "getSettlements",
+		"calledMethod"     => "getWarehouses",
 		"methodProperties" => [
 			"Warehouse" => 1, // With warehouses only
 			"Language"  => "UA",

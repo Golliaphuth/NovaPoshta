@@ -19,7 +19,7 @@ class ModelFactory
 	public static function create($model, $data)
 	{
 		foreach ($data as $key => $value) {
-			if ($value instanceof stdClass) {
+			if ($value instanceof stdClass || is_array($value)) {
 				try {
 					$modelClass = get_class($model) . '\\' . ucfirst($key);
 					if (class_exists($modelClass)) {
@@ -29,7 +29,7 @@ class ModelFactory
 					echo $e->getMessage();
 				}
 			}
-			$model->$key = (string)$value;
+			$model->$key = $value;
 		}
 		return $model;
 	}
