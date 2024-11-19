@@ -4,6 +4,7 @@ namespace NovaPoshta\Response;
 
 use NovaPoshta\Factories\ModelFactory;
 use NovaPoshta\Models\Settlement;
+use NovaPoshta\Models\Warehouse;
 
 /**
  * Class GetWarehousesResponse
@@ -17,7 +18,7 @@ class GetWarehousesResponse extends AResponse
 	public function __construct(array $data)
 	{
 		foreach ($data as $item) {
-			$this->settlements[] = ModelFactory::create(new Settlement(), $item);
+			$this->settlements[] = ModelFactory::create(new Warehouse(), $item);
 		}
 	}
 
