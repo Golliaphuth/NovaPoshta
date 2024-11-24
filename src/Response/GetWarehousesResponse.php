@@ -3,7 +3,6 @@
 namespace NovaPoshta\Response;
 
 use NovaPoshta\Factories\ModelFactory;
-use NovaPoshta\Models\Settlement;
 use NovaPoshta\Models\Warehouse;
 
 /**

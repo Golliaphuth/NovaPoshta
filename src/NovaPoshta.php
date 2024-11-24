@@ -4,6 +4,7 @@ namespace NovaPoshta;
 
 use NovaPoshta\Requests\GetCitiesRequest;
 use NovaPoshta\Requests\GetSettlementAreasRequest;
+use NovaPoshta\Requests\GetSettlementRegionsRequest;
 use NovaPoshta\Requests\GetSettlementsRequest;
 use NovaPoshta\Requests\GetWarehousesRequest;
 use NovaPoshta\Requests\GetWarehouseTypesRequest;
@@ -31,6 +32,15 @@ class NovaPoshta
 	public function getSettlementAreas(): GetSettlementAreasRequest
 	{
 		return new GetSettlementAreasRequest($this->apiKey);
+	}
+
+	/**
+	 * @return GetSettlementRegionsRequest
+	 * @throws Throwable
+	 */
+	public function getSettlementRegions(): GetSettlementRegionsRequest
+	{
+		return new GetSettlementRegionsRequest($this->apiKey);
 	}
 
 	/**

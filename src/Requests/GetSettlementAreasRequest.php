@@ -5,7 +5,7 @@ namespace NovaPoshta\Requests;
 use NovaPoshta\Response\GetSettlementAreasResponse;
 
 /**
- * Class GetAreasRequest
+ * Class GetSettlementAreasRequest
  * @package NovaPoshta\Requests
  */
 class GetSettlementAreasRequest extends ARequest

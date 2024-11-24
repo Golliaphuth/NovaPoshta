@@ -52,7 +52,6 @@ abstract class ARequest implements IRequest
 			$json = curl_exec($curl);
 			curl_close($curl);
 			$response = json_decode($json, TRUE, 512, JSON_THROW_ON_ERROR);
-//			print_r($response); die();
 			if ($response['success'] === TRUE) {
 				return new $this->responseClass($response['data']);
 			}

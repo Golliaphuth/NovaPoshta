@@ -6,7 +6,7 @@ use NovaPoshta\Factories\ModelFactory;
 use NovaPoshta\Models\Area;
 
 /**
- * Class GetAreasResponse
+ * Class GetSettlementAreasResponse
  * @package NovaPoshta\Response
  */
 class GetSettlementAreasResponse extends AResponse
